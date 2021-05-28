@@ -40,4 +40,4 @@ jobs:
     - name: Build & deploy
       run: |
         npm run build
-        firebase deploy --only hosting --token ${{ SECRETS.CI_FIREBASE_TOKEN }}
+        firebase deploy --only hosting --token ${{ SECRETS.FIREBASE_TOKEN }}
