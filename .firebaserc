@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "react-deploy-prod"
+    "default": "react-deploy-prod",
+    "development": "react-deploy-dev"
   }
 }
