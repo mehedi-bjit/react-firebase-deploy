@@ -44,7 +44,15 @@ jobs:
         with:
           name: build
           path: build
-      - name: Depoy to Firebase
+      - name: Depoy to Firebase production
+        if: ${{ github.ref == 'refs/heads/main' }}
+        uses: w9jds/firebase-action@master
+        with:
+          args: deploy --only hosting -P production
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+      - name: Deploy to firebase development
+        if: ${{ github.ref == 'refs/heads/development' }}
         uses: w9jds/firebase-action@master
         with:
           args: deploy --only hosting -P development
